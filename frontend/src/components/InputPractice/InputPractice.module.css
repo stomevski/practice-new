@@ -1,0 +1,51 @@
+form {
+    width: 50%;
+    padding: 5% 3%;
+}
+
+.input_container {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.input_container label {
+    font-size: 1.3rem;
+    padding: 0.5rem 0;
+}
+
+.input_container input {
+    font-size: 2rem;
+    padding: 0.5rem 0.3rem;
+    background: rgb(230, 215, 250);
+    border-radius: 10px;
+}
+
+.btn_container {
+    margin-top: 5%;
+}
+
+.btn_container button {
+    font-size: 1.6rem;
+    padding: 1.8% 2.2%;
+    margin-right: 5%;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn_register {
+    background: black;
+}
+
+.btn_reset {
+    background: salmon;
+}
+
+.invalid {
+    border: 1px solid red;
+}
