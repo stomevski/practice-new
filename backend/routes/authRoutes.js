@@ -1,5 +1,5 @@
 const express = require('express');
-const { register, login, passwordReset } = require('../controllers/authController');
+const { register, login, passwordReset, refreshToken, logout } = require('../controllers/authController');
 const { jwtMiddleware } = require('../middleware/jwtMiddleware');
 
 
@@ -9,6 +9,10 @@ authRouter.post('/register', register);
 
 authRouter.post('/login', login);
 
-authRouter.post('/resetPassword', jwtMiddleware, passwordReset);
+authRouter.patch('/resetPassword', jwtMiddleware, passwordReset);
+
+authRouter.post('/refreshToken', refreshToken);
+
+authRouter.post("/logout", logout);
 
 module.exports = authRouter;

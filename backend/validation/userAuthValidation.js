@@ -35,3 +35,5 @@ exports.userChangePasswordRule = {
     password: 'required|string|alphaNumeric|length:30,5',
     newPassword: 'required|string|alphaNumeric|length:30,5'
 }
+
+

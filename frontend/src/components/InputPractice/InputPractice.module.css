@@ -1,6 +1,7 @@
 form {
     width: 50%;
     padding: 5% 3%;
+    margin: 0 auto;
 }
 
 .input_container {
@@ -47,5 +48,23 @@ h1 {
 }
 
 .invalid {
-    border: 1px solid red;
+    border: 2px solid red;
+}
+
+.loginOrRegister {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+
+.loginOrRegister:hover {
+    background: #D96098;
+    color: #FAEEE7;
+    border: 1px solid transparent;
 }

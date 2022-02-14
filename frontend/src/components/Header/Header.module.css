@@ -1,0 +1,27 @@
+header {
+    background: #24A19C;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.user_nav {
+    display: flex;
+    align-items: center;
+}
+
+.user_nav p {
+    margin-left: 10%;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-bottom: 5px solid transparent;
+    padding-bottom: 0.5rem;
+}
+
+.user_nav p:hover {
+    border-bottom: 5px solid #FAEEE7;
+}
+
