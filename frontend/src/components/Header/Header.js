@@ -2,13 +2,13 @@ import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../store/AuthStore";
-import { TailSpin } from 'react-loader-spinner';
+import useSpinner from "../../hooks/spinnerHook";
 
 const Header = () => {
 
     const ctx = useContext(AuthContext);
 
-    const [spinner, setSpinner] = useState(false);
+    const { spinner, setSpinner, spinnerForm } = useSpinner();
 
 
     const logoutHandler = () => {
@@ -29,13 +29,8 @@ const Header = () => {
                 </div>
             </header>
 
-            {spinner && <div style={{ "width": "100%", "height": "100vh", "display": "flex", "justifyContent": "center", "alignItems": "center", }}><TailSpin
+            {spinner && spinnerForm}
 
-                heigth="200"
-                width="200"
-                color="#24A19C"
-
-            /></div>}
         </React.Fragment>
     )
 

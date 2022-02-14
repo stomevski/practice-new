@@ -4,11 +4,11 @@ import { Formik, Form, useField } from 'formik';
 import TextField from "../TextField/TextField";
 import * as Yup from 'yup';
 import { AuthContext } from "../../store/AuthStore";
-import { TailSpin } from 'react-loader-spinner';
+import useSpinner from "../../hooks/spinnerHook";
 
 const ChangePassword = () => {
 
-    const [spinner, setSpinner] = useState(false);
+    const { spinner, setSpinner, spinnerForm } = useSpinner();
 
     const ctx = useContext(AuthContext);
 
@@ -34,23 +34,18 @@ const ChangePassword = () => {
         >
             {formik => (
 
-                spinner ? <div style={{ "width": "100%", "height": "100vh", "display": "flex", "justifyContent": "center", "alignItems": "center", }}><TailSpin
+                spinner ? spinnerForm :
+                    <Form>
+                        <h1>Reset Password</h1>
+                        <TextField type="password" label="Old Password" name="password" />
+                        <TextField type="password" label="New Password" name="newPassword" />
 
-                    heigth="200"
-                    width="200"
-                    color="#24A19C"
+                        <div className={styles.btn_container}>
+                            <button type="submit" className={styles.btn_register}>Change Password</button>
+                        </div>
+                        {ctx.error && <p style={{ "color": "red", "fontWeight": "bold" }}>{ctx.error}</p>}
 
-                /></div> : <Form>
-                    <h1>Reset Password</h1>
-                    <TextField type="password" label="Old Password" name="password" />
-                    <TextField type="password" label="New Password" name="newPassword" />
-
-                    <div className={styles.btn_container}>
-                        <button type="submit" className={styles.btn_register}>Change Password</button>
-                    </div>
-                    {ctx.error && <p style={{ "color": "red", "fontWeight": "bold" }}>{ctx.error}</p>}
-
-                </Form>
+                    </Form>
             )}
 
         </Formik>
